@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
           <div className="max-w-7xl container mx-auto px-2">
             <Header />
 
-            <div className="flex">
+            <div className="flex gap-x-5">
               <SideBar />
               <div className="w-full">{children}</div>
             </div>
