@@ -7,7 +7,7 @@ import Product from "@/components/Product";
 const Homepage = () => {
   const { isLoading, data: products } = useGetProducts();
 
-  if (isLoading) return <p className="text-center">Loading...</p>;
+  if (isLoading) return <p className="text-center">در حال بارگذاری...</p>;
 
   return (
     <div>
