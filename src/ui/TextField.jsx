@@ -1,13 +1,19 @@
+import { CiSearch } from "react-icons/ci";
+
 const TextField = ({ name, placeholder, className }) => {
   return (
-    <div>
+    <div className="h-full relative flex items-center">
       <input
         type="text"
         id={name}
         name={name}
         placeholder={placeholder}
-        className={`${className} textField__input`}
+        maxLength={20}
+        className={`${className} pr-11 textField__input`}
       />
+      <span className="absolute right-3">
+        <CiSearch />
+      </span>
     </div>
   );
 };
