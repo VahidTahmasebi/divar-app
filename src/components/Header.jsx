@@ -3,6 +3,8 @@ import Image from "next/image";
 
 import headerLogo from "@/public/assets/header-logo.webp";
 import { headerSideLeft } from "@/constants/assets";
+import { MdKeyboardArrowDown } from "react-icons/md";
+import { IoLocationOutline } from "react-icons/io5";
 
 import TextField from "../ui/TextField";
 
@@ -22,22 +24,20 @@ function Header() {
               className="w-12 h-auto"
             />
           </div>
-          <div>
-            <span>{/* icon */}</span>
+          <div className="flex items-center gap-x-2">
+            <IoLocationOutline />
             <Link className="block py-2" href="/">
               قائم‌شهر
             </Link>
           </div>
-          <div>
+          <div className="flex items-center gap-x-4">
             <p>دسته‌ها</p>
-            {/* arrow icon */}
+            <MdKeyboardArrowDown />
           </div>
 
           <TextField
             placeholder="جستجو در همه آگهی‌ها"
-            name="name"
-            // value={name}
-            // onChange={(e) => setSearch(e.target.value)}
+            name="search"
             className="w-96"
           />
         </div>
@@ -47,11 +47,11 @@ function Header() {
             <li
               key={index}
               className={item?.redClass ? "btn btn--primary" : ""}>
-              <Link href="/" className="flex gap-x-2">
+              <Link href="/" className="flex items-center gap-x-2">
                 {item.icon && <span>{item.icon}</span>}{" "}
                 <span>{item.title}</span>
               </Link>
-            </li> 
+            </li>
           ))}
         </ul>
       </nav>
